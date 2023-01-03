@@ -32,10 +32,10 @@ jobs:
       
       - name: Setup Authentication for Terraform
         run: |
-          echo "ARM_SUBSCRIPTION_ID=$(az account show --query="id" -o tsv)" >> $GITHUB_ENV
-          echo "ARM_CLIENT_ID=$(az account show --query="user.name" -o tsv)" >> $GITHUB_ENV
-          echo "ARM_CLIENT_SECRET=(jq '.clientSecret' -r <<< '${{ env.AZURE_SP_CREDENTIALS }}')" >> $GITHUB_ENV
-          echo "ARM_TENANT_ID=$(az account show --query="tenantId" -o tsv)" >> $GITHUB_ENV
+          echo "ARM_SUBSCRIPTION_ID=$(jq '.subscriptionId' -r <<< '${{ env.AZURE_SP_CREDENTIALS }}')" >> $GITHUB_ENV
+          echo "ARM_CLIENT_ID=$(jq '.clientId' -r <<< '${{ env.AZURE_SP_CREDENTIALS }}')" >> $GITHUB_ENV
+          echo "ARM_CLIENT_SECRET=$(jq '.clientSecret' -r <<< '${{ env.AZURE_SP_CREDENTIALS }}')" >> $GITHUB_ENV
+          echo "ARM_TENANT_ID=$(jq '.tenantId' -r <<< '${{ env.AZURE_SP_CREDENTIALS }}')" >> $GITHUB_ENV
           echo "ARM_SKIP_PROVIDER_REGISTRATION=true" >> $GITHUB_ENV
       
       - name: Inject Environment Variables
@@ -105,11 +105,11 @@ jobs:
       
       - name: Setup Authentication for Terraform
         run: |
-          echo "ARM_SUBSCRIPTION_ID=$(az account show --query="id" -o tsv)" >> $GITHUB_ENV
-          echo "ARM_CLIENT_ID=$(az account show --query="user.name" -o tsv)" >> $GITHUB_ENV
-          echo "ARM_CLIENT_SECRET=(jq '.clientSecret' -r <<< '${{ env.AZURE_SP_CREDENTIALS }}')" >> $GITHUB_ENV
-          echo "ARM_TENANT_ID=$(az account show --query="tenantId" -o tsv)" >> $GITHUB_ENV
-      
+          echo "ARM_SUBSCRIPTION_ID=$(jq '.subscriptionId' -r <<< '${{ env.AZURE_SP_CREDENTIALS }}')" >> $GITHUB_ENV
+          echo "ARM_CLIENT_ID=$(jq '.clientId' -r <<< '${{ env.AZURE_SP_CREDENTIALS }}')" >> $GITHUB_ENV
+          echo "ARM_CLIENT_SECRET=$(jq '.clientSecret' -r <<< '${{ env.AZURE_SP_CREDENTIALS }}')" >> $GITHUB_ENV
+          echo "ARM_TENANT_ID=$(jq '.tenantId' -r <<< '${{ env.AZURE_SP_CREDENTIALS }}')" >> $GITHUB_ENV
+
       - name: Download Plan
         uses: actions/download-artifact@v3
         with:
