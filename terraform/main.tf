@@ -69,7 +69,7 @@ resource "azurerm_linux_function_app" "function" {
   ]
 
   site_config {
-    always_on         = true
+    always_on         = false
     ftps_state        = "AllAllowed"
     http2_enabled     = true
     use_32_bit_worker = false
