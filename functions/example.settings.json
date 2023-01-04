@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "change_me: storage account primary connection string",
+    "APP_INSIGHTS_CNX_STR": "change_me: app insights connection string",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "ENABLE_ORYX_BUILD": true,
+    "STORAGE_ACCOUNT_NAME": "change_me: storage account name",
+    "STORAGE_ACCOUNT_KEY": "change_me: storage account primary access key",
+    "STORAGE_ACCOUNT_CNX_STR": "change_me: storage account primary connection string",
+    "STORAGE_ACCOUNT_INPUT_CONTAINER": "input",
+    "STORAGE_ACCOUNT_OUTPUT_CONTAINER": "output"
+  }
+}

@@ -1,0 +1,8 @@
+aiohttp==3.8.1
+azure-core==1.25.0
+azure-functions==1.11.2
+azure-identity==1.10.0
+azure-storage-blob==12.13.1
+opencensus-ext-azure==1.1.7
+pydantic==1.9.0
+requests==2.28.1
